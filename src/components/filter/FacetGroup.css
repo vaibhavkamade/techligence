@@ -1,0 +1,26 @@
+.facet-group {
+  margin-bottom: 20px;
+}
+
+.facet-group h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.chevron-icon {
+  transition: transform 0.3s;
+}
+
+.chevron-icon.expanded {
+  transform: rotate(90deg);
+}

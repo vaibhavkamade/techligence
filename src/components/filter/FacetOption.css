@@ -1,0 +1,31 @@
+.facet-option {
+  list-style: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.styled-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkmark {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-text {
+  font-size: 1em;
+}
