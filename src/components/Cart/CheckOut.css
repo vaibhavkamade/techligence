@@ -1,0 +1,52 @@
+/* CheckoutForm.css */
+.checkout-container {
+  margin-top: 20px;
+}
+
+.checkout-title {
+  margin-bottom: 20px;
+}
+
+.form-label span.text-danger {
+  color: red;
+}
+
+.float-end {
+  float: right;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.card-body strong {
+  display: block;
+}
+
+.bi-lock-fill {
+  margin-right: 0.5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}

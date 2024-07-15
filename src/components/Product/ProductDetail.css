@@ -196,6 +196,18 @@
 }
 
 
-body{
-  
+.cart-icon-container {
+  position: relative;
 }
+
+.cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+

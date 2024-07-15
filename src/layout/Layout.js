@@ -6,19 +6,21 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     let backgroundColor;
+ 
 
     switch (location.pathname) {
       case '/':
-        backgroundColor = 'lightblue';
+        backgroundColor = '#fff';
+
         break;
       case '/blogs':
-        backgroundColor = '#FFFDD0';
+        backgroundColor = '#F7F7F7';
         break;
       case '/blogs/:id':
         backgroundColor = '#F7F7F7';
         break;
       case '/shopping':
-        backgroundColor = '#F7F7F7';
+        backgroundColor = '#fff';
         break;
       case '/shopping/:id':
         backgroundColor = 'lightgoldenrodyellow';
@@ -34,6 +36,7 @@ const Layout = ({ children }) => {
     }
 
     document.querySelector('.App').style.backgroundColor = backgroundColor;
+    
   }, [location.pathname]);
 
   return <div>{children}</div>;

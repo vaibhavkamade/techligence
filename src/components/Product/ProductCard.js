@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCakeCandles, faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
 
-const ProductCard = ({ id, name, imageSrc, description }) => {
+const ProductCard = ({ id, name, imageSrc, description,amount,quantity }) => {
   return (
     <div className='card'>
       <img src={imageSrc} alt="nothing" />
@@ -22,7 +22,7 @@ const ProductCard = ({ id, name, imageSrc, description }) => {
       </div>
       <Link
         to={`/shopping/${id}`}
-        state={{ id, name, imageSrc, description }}
+        state={{ id, name, imageSrc, description,amount,quantity }}
         style={{ textDecoration: 'none' }}
       >
         <button className='btn'>Learn More</button>
