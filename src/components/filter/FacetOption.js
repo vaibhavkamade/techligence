@@ -1,8 +1,9 @@
 import React from 'react';
-import './FacetOption.css'; // Add CSS for styling
+import './FacetOption.css';
 
 const FacetOption = ({ option, isChecked, onChange }) => {
   return (
+    <>
     <li className="facet-option">
       <label className="checkbox-label">
         <input
@@ -21,6 +22,7 @@ const FacetOption = ({ option, isChecked, onChange }) => {
         <span className="checkbox-text">{option}</span>
       </label>
     </li>
+    </>
   );
 };
 

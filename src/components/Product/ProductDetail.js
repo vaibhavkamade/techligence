@@ -18,18 +18,21 @@ import ProductChar from "./ProductChar.js";
 import { CartContext } from "../../context/CartContext.js";
 
 const ProductDetail = () => {
-  const { addToCart, cart } = useContext(CartContext);
+  const { addToCart, cart, stock } = useContext(CartContext);
   const location = useLocation();
   const { state } = location;
-  const { id, name, imageSrc, description, amount, quantity } = state || {};
+  const { id, name, imageSrc, description, amount, quantity, maxQuantity, GST,freeDelivery,deliveryFee } = state || {};
 
   if (!state) {
     return <div>No product data available.</div>;
   }
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     addToCart(state);
-  }
+  };
+
+  const availableStock = stock[id] !== undefined ? stock[id] : maxQuantity;
+  const isAvailable = availableStock > 0;
 
   return (
     <>
@@ -82,9 +85,12 @@ const ProductDetail = () => {
           </section>
         </div>
         <div className="right">
-          <div>
-            <span style={{ backgroundColor: 'yellow', fontSize: 'medium', fontWeight: '800', padding: '3px' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ backgroundColor: 'yellow', fontSize: 'medium', fontWeight: '800', padding: '3px', marginRight: '10px' }}>
               New
+            </span>
+            <span style={{ color: isAvailable ? 'green' : 'red', fontSize: 'medium', fontWeight: '800' }}>
+              {isAvailable ? 'Available' : 'Not Available'}
             </span>
           </div>
           <div>
@@ -105,12 +111,11 @@ const ProductDetail = () => {
           </div>
           <hr />
           <div style={{ display: 'flex', gap: '20px' }}>
-            <span><button className='btn' onClick={handleClick}>Add to Cart</button></span>
+            <span><button className='btn' onClick={handleClick} disabled={!isAvailable}>Add to Cart</button></span>
             <span className="cart-icon-container">
-              <Link to={`/shopping/cart`} state={{ id, name, imageSrc, description, amount, quantity }}>
-
+              <Link to={`/shopping/cart`} state={{ id, name, imageSrc, description, amount, quantity, maxQuantity, GST,freeDelivery,deliveryFee }}>
                 <button className="btn">
-                  View Cart 
+                  View Cart
                   <FontAwesomeIcon icon={faCartShopping} />
                   {cart.length > 0 && (
                     <span className="cart-count">{cart.length}</span>

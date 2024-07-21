@@ -12,6 +12,7 @@ import {
 import { FaQuoteLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const images = [
   "https://bootstrapmade.com/demo/templates/OnePage/assets/img/clients/client-1.png",
@@ -197,7 +198,7 @@ const Home = () => {
               <li>Ullamco laboris nisi ut aliquip ex ea commodo</li>
             </ul>
           </div>
-          <div class="right">
+          <div className="right">
             <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
               irure dolor in reprehenderit in voluptate velit esse cillum dolore
@@ -205,7 +206,7 @@ const Home = () => {
               proident, sunt in culpa qui officia deserunt mollit anim id est
               laborum.
             </p>
-            <a href="#" class="btn">
+            <a href="#" className="btn">
               Read More →
             </a>
           </div>
@@ -263,6 +264,13 @@ const Home = () => {
               eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
               proident
             </p>
+            <div className='btn'>
+            <Link to='/shopping' style={{textDecoration:'none' , color:'white'}}>
+                  Read More →
+            </Link>
+            </div>
+            
+           
           </div>
         </motion.div>
 

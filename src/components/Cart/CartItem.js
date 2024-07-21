@@ -17,7 +17,9 @@ const CartItem = ({ item }) => {
   };
 
   const handleIncrease = () => {
-    updateItemQuantity(item.id, item.quantity + 1);
+    if(item.quantity < item.maxQuantity){
+      updateItemQuantity(item.id, item.quantity + 1);
+    }
   };
 
   const handleRemove = () => {
@@ -27,6 +29,8 @@ const CartItem = ({ item }) => {
   const handleClick = () =>{
     navigate(`/shopping/${item.id}`);
   }
+
+  console.log(item.quantity);
 
   return (
     <div className="cart-item">

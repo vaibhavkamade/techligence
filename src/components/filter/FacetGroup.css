@@ -1,5 +1,7 @@
 .facet-group {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  width: 170px; /* Ensure a consistent width for the facet groups */
+  margin: 0px;
 }
 
 .facet-group h3 {

@@ -10,7 +10,7 @@
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #007bff, #00d4ff);
-  color: #fff;
+  color: white;
   padding: 60px 20px;
   text-align: center;
   border-radius: 10px;
@@ -25,6 +25,10 @@
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+}
+
+.hero h3 span{
+  color: white;
 }
 
 .hero .btn {
@@ -200,7 +204,7 @@ section#about p {
   padding: 50px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 0;
+  /* padding-bottom: 0; */
   background-color: #f8f9fa;
 }
 
@@ -254,6 +258,21 @@ section#about p {
   color: #007bff;
 }
 
+.highlight-section .right .btn{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.highlight-section .right .btn:hover {
+  background-color: #0056b3;
+}
 
 /* Client Logos Section */
 #clients .client-logos {

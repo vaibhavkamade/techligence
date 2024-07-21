@@ -1,10 +1,12 @@
 import React from 'react';
 import './CartTotals.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const CartTotals = ({calculateTotal}) => {
-
-
+const CartTotals = ({ calculateSubtotal, calculateGST, calculateTotal ,cart}) => {
+  const subtotal = calculateSubtotal();
+  const gst = calculateGST();
+  const total = calculateTotal();
+  console.log(cart);
 
   return (
     <div className="cart_totals">
@@ -16,15 +18,26 @@ const CartTotals = ({calculateTotal}) => {
             <td data-title="Subtotal">
               <span className="woocommerce-Price-amount amount">
                 <bdi>
-                  <span className="woocommerce-Price-currencySymbol">₹</span>{calculateTotal().toLocaleString()} 
+                  <span className="woocommerce-Price-currencySymbol">₹</span>{subtotal.toLocaleString()}
                 </bdi>
               </span>
             </td>
           </tr>
 
           <tr className="order-total">
-            <th>Shipping </th>
-            <td data-title="Subtotal">
+            <th>GST</th>
+            <td data-title="GST">
+              <span className="woocommerce-Price-amount amount">
+                <bdi>
+                  <span className="woocommerce-Price-currencySymbol">₹</span>{gst.toLocaleString()}
+                </bdi>
+              </span>
+            </td>
+          </tr>
+
+          <tr className="order-total">
+            <th>Shipping</th>
+            <td data-title="Shipping">
               <span className="woocommerce-Price-amount amount">
                 <bdi>
                   <span className="woocommerce-Price-currencySymbol">Free Shipping</span>
@@ -32,14 +45,14 @@ const CartTotals = ({calculateTotal}) => {
               </span>
             </td>
           </tr>
-          
+
           <tr className="order-total">
             <th>Total</th>
             <td data-title="Total">
               <strong>
                 <span className="woocommerce-Price-amount amount">
                   <bdi>
-                    <span className="woocommerce-Price-currencySymbol">₹</span>{calculateTotal().toLocaleString()}
+                    <span className="woocommerce-Price-currencySymbol">₹</span>{total.toLocaleString()}
                   </bdi>
                 </span>
               </strong>
@@ -48,8 +61,8 @@ const CartTotals = ({calculateTotal}) => {
         </tbody>
       </table>
       <div className="wc-proceed-to-checkout">
-        <Link to={`/shopping/cart/checkout` }  className="checkout-button button alt wc-forward">
-        Proceed to checkout
+        <Link to={`/shopping/cart/checkout`} className="checkout-button button alt wc-forward">
+          Proceed to checkout
         </Link>
       </div>
       <div className="cart-custom-field">

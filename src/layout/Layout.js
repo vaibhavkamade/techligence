@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
     switch (location.pathname) {
       case '/':
-        backgroundColor = '#fff';
+        backgroundColor = '#FEF7E8';
 
         break;
       case '/blogs':
@@ -20,13 +20,13 @@ const Layout = ({ children }) => {
         backgroundColor = '#F7F7F7';
         break;
       case '/shopping':
-        backgroundColor = '#fff';
+        backgroundColor = '#F8F9FA';
         break;
       case '/shopping/:id':
         backgroundColor = 'lightgoldenrodyellow';
         break;
       case '/about':
-        backgroundColor = 'lightpink';
+        backgroundColor = '#FBF4EA';
         break;
       case '/contact':
         backgroundColor = '#ebedee';

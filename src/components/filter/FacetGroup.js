@@ -1,6 +1,6 @@
 import React from 'react';
 import FacetOption from './FacetOption';
-import './FacetGroup.css'; // Add CSS for styling
+import './FacetGroup.css';
 
 const FacetGroup = ({ title, options, isExpanded, onToggle, onChange }) => {
   return (
@@ -36,8 +36,8 @@ const FacetGroup = ({ title, options, isExpanded, onToggle, onChange }) => {
           ))}
         </ul>
       )}
-      <hr />
     </div>
+    <hr style={{margin:'0px'}} />
     </>
   );
 };

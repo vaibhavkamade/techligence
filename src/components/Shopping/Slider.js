@@ -1,13 +1,13 @@
 import React from 'react';
-import { images } from '../../assets/images';
+// import { images } from '../../assets/images';
 import styled, { keyframes, css } from "styled-components";
 
-const Slider = () => {
+const Slider = ({title , images}) => {
   return (
     <div className='appContainer' style={{padding:"30px"}}>
       
       <Wrapper>
-      <Text>Unlock amazing products</Text>
+      <Text>{title}</Text>
         <Marquee>
           <MarqueeGroup>
             {images.map((el) => (
@@ -124,8 +124,8 @@ const ImageGroup = styled.div`
 
 const Image = styled.img`
   object-fit: contain;
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 75%;
   /* border: 1px solid black; */
   border-radius: 0.5rem;
   aspect-ratio: 16/9;
